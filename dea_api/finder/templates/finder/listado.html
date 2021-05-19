@@ -13,31 +13,24 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success" id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Find Your DEA</a>
+            <a class="navbar-brand" href="#">Find Your DEA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/listado">Listado</a>
+                    <a class="nav-link active" aria-current="page" href="#">Listado</a>
                     <a class="nav-link active" href="#">Users</a>
                 </div>
             </div>
         </div>
     </nav>
-    <main class="container">
-        <div class="d-flex justify-content-center">
-            <div class="card" style="width: 18rem">
-                <img src="{% static 'img/dea.png'%}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{dea.direccion_via_nombre}}</h5>
-                  <p class="card-text">{{dea.horario_acceso}}</p>
-                  <a href="{{url}}" class="btn btn-success">Maps</a>
-                </div>
-            </div>
-        </div>
-        
-
-    </main>
-</body>
+    <main class="container-fluid">
+        <ul class="list-group">
+            {%for dea in deas%}
+                <li class="list-group-item">{{dea.direccion_via_nombre}}</li>
+            {%endfor%}
+        </ul>
+    </main>     
+</body
 </html>
